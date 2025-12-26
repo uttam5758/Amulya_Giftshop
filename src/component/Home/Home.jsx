@@ -95,13 +95,13 @@ const Home = () => {
               </div>
               <div>
                 <h2
-                  style={{
-                    fontSize: "4.5em",
-                    fontWeight: "400",
-                    fontFamily: "'Dancing Script', cursive",
-                    color: "#fff",
-                    // lineHeight: ".7",
-                  }}
+                  // style={{
+                  //   fontSize: "4.5em",
+                  //   fontWeight: "400",
+                  //   fontFamily: "'Dancing Script', cursive",
+                  //   color: "#fff",
+                  //   // lineHeight: ".7",
+                  // }}
                 >
                   Crafting Happiness
                 </h2>
