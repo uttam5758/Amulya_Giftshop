@@ -15,11 +15,11 @@ import BottomTab from "../../more/BottomTab";
 import { ToastContainer } from "react-toastify";
 
 
-const Home = () => {
-  const dispatch = useDispatch();
-  const { products,error,loading } = useSelector(
-    (state) => state.products
-  );
+// const Home = () => {
+//   const dispatch = useDispatch();
+//   const { products,error,loading } = useSelector(
+//     (state) => state.products
+//   );
 
   useEffect(() => {
 
