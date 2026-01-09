@@ -20,103 +20,103 @@ const { cartItems } = useSelector((state) => state.cart);
     }
   });
 
-  // return (
-  //   <div className="Header">
-  //     {/* Header TopBar */}
-  //     <div className="Header__topbar space__beetween">
-  //       {/* Topbar Left */}
-  //       <div className="logo pxy__10">
-  //         <Link to="/">
-  //           <img
-  //             src={logoo}
-  //             alt=""
-  //             className="logo"
-  //             style={{
-  //               width: "100px",
-  //               height: "100px",
-  //               borderRadius: "50%",
-  //               cursor: "pointer",
-  //             }}
-  //           />
-  //         </Link>
-  //       </div>
-  //       {/* Topbar Middle */}
+  return (
+    <div className="Header">
+      {/* Header TopBar */}
+      <div className="Header__topbar space__beetween">
+        {/* Topbar Left */}
+        <div className="logo pxy__10">
+          <Link to="/">
+            <img
+              src={logoo}
+              alt=""
+              className="logo"
+              style={{
+                width: "100px",
+                height: "100px",
+                borderRadius: "50%",
+                cursor: "pointer",
+              }}
+            />
+          </Link>
+        </div>
+        {/* Topbar Middle */}
 
-  //       <div
-  //         className="searchBoxHome"
-  //         style={{
-  //           width: "50%",
-  //           position: "relative",
-  //         }}
-  //       >
-  //         <div
-  //           className="inputBox"
-  //           style={{
-  //             display: "flex",
-  //             alignItems: "center",
-  //             height: "30px",
-  //             width: "100%",
-  //             background: "#1d6672ff",
-  //             overflow: "hidden",
-  //           }}
-  //         >
-  //           <span
-  //             style={{
-  //               color: "#6de80fff",
+        <div
+          className="searchBoxHome"
+          style={{
+            width: "50%",
+            position: "relative",
+          }}
+        >
+          <div
+            className="inputBox"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              height: "30px",
+              width: "100%",
+              background: "#1d6672ff",
+              overflow: "hidden",
+            }}
+          >
+            <span
+              style={{
+                color: "#6de80fff",
                 
-  //             }}
-  //           >
-  //             Welcome to Amulya..(Crafting Movement Creating Happiness)..
-  //           </span>
-  //         </div>
-  //       </div>
+              }}
+            >
+              Welcome to Amulya..(Crafting Movement Creating Happiness)..
+            </span>
+          </div>
+        </div>
 
-  //       <div
-  //         className="flex align__items__center"
-  //         style={{
-  //           margin: "0px 10px",
-  //         }}
-  //       >
-  //         <div>
-  //           <svg
-  //             xmlns="http://www.w3.org/2000/svg"
-  //             width="25"
-  //             height="25"
-  //             fill="currentColor"
-  //             class="bi bi-envelope"
-  //             viewBox="0 0 16 16"
-  //             style={{
-  //               color: "#53C08E",
-  //             }}
-  //           >
-  //             <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" />
-  //           </svg>
-  //         </div>
-  //         <span
-  //           style={{
-  //             fontFamily: "sans-serif",
-  //             fontSize: "1rem",
-  //           }}
-  //         >
-  //           <strong
-  //             style={{
-  //               padding: "0px 5px",
-  //             }}
-  //           >
-  //             Email:
-  //           </strong>{" "}
-  //         uttamsapkota.danger@gmail.com
-  //         </span>
-  //       </div>
-  //     </div>
-  //     {/* Header Navbar */}
-  //     <div className="navbar flex pz__10 space__beetween" ref={switcherTab}>
-  //       <div
-  //         className="navigation"
-  //         style={{
-  //           padding: "0px 50px",
+        <div
+          className="flex align__items__center"
+          style={{
+            margin: "0px 10px",
+          }}
+        >
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="25"
+              height="25"
+              fill="currentColor"
+              class="bi bi-envelope"
+              viewBox="0 0 16 16"
+              style={{
+                color: "#53C08E",
+              }}
+            >
+              <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" />
+            </svg>
+          </div>
+          <span
+            style={{
+              fontFamily: "sans-serif",
+              fontSize: "1rem",
+            }}
+          >
+            <strong
+              style={{
+                padding: "0px 5px",
+              }}
+            >
+              Email:
+            </strong>{" "}
+          uttamsapkota.danger@gmail.com
+          </span>
+        </div>
+      </div>
+      {/* Header Navbar */}
+      <div className="navbar flex pz__10 space__beetween" ref={switcherTab}>
+        <div
+          className="navigation"
+          style={{
+            padding: "0px 50px",
 
-  //         }}
+          }}
         >
           <ul
             style={{
