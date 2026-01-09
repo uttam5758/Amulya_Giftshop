@@ -1,6 +1,6 @@
 import React from "react";
 import "./Sidebar.css";
-import logoo from "../../Assets/florashop.png";
+import logoo from "../../Assets/amulya.png";
 import { Link } from "react-router-dom";
 import PostAddIcon from "@material-ui/icons/PostAdd";
 import AddIcon from "@material-ui/icons/Add";
@@ -21,12 +21,12 @@ const Sidebar = () => {
         <img
           src={logoo}
           alt="Ecommerce"
-          style={{
-            width: "150px",
-            height: "100px",
-            objectFit: "contain",
-            cursor: "pointer",
-          }}
+           style={{
+                width: "100px",
+                height: "100px",
+                borderRadius: "50%",
+                cursor: "pointer",
+              }}
         />
       </Link>
       <Link to="/dashboard">
