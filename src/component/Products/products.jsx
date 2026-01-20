@@ -13,12 +13,17 @@ import Header from "../Home/Header";
 import Footer from "../../more/Footer";
 
 const categories = [
-  "Decorative Plants",
+  "MDF",
+  "Metal Keyring",
   "Flowers",
+  "Hanging Frame",
+  "Wooden Keyring",
+  "Mini Canvas",
   "Fruit Plants",
-  "Herbs",
+  "Dolpo Shilajit",
   "Indoor Plants",
-  "Outdoor Plants",
+  "Combo Packs Gifts",
+
     
 ];
 

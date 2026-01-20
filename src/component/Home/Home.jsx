@@ -1,10 +1,9 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import "./Home.css";
 import Carousel from "react-material-ui-carousel";
 import logoo1 from "../../Assets/shilajit1.png";
 import logoo from "../../Assets/homepage.png";
 import bg from "../../Assets/keyring.png";
-import bg2 from "../../Assets/shopping4.jpg";
 import { getProduct } from "../../actions/productActions";
 import { useSelector, useDispatch } from "react-redux";
 import ProductCard from "../Products/ProductCard";
@@ -14,19 +13,14 @@ import Footer from "../../more/Footer";
 import BottomTab from "../../more/BottomTab";
 import { ToastContainer } from "react-toastify";
 
-
 const Home = () => {
   const dispatch = useDispatch();
-  const { products,error,loading } = useSelector(
-    (state) => state.products
-  );
+  const { products, error, loading } = useSelector((state) => state.products);
 
   useEffect(() => {
-
     dispatch(getProduct());
- 
   }, [dispatch]);
-  
+
   return (
     <>
       {loading ? (
@@ -36,119 +30,64 @@ const Home = () => {
           <MetaData title="Amulya" />
           <Header />
 
-          {/* Carousel */}
+          {/* Banner */}
           <div className="banner">
-            <Carousel className="new">
-            <img src={logoo1}className="bgImg" alt="" />
-            <img src={logoo} className="bgImg" alt="" />
-            <img src={bg} className="bgImg" alt="" />
-            {/* <img src={} className="bgImg" alt="" /> */}
-            {/* <img src="https://cdn.shopify.com/s/files/1/0267/1699/5754/files/home-garden-arrangement-with-copy-space_480x480.jpg?v=1622881576" className="bgImg" alt="" /> */}
+            <Carousel className="new" indicators={false} animation="slide" duration={700}>
+              <div className="bannerSlide">
+                <img src={logoo1} className="bgImg" alt="banner" />
+              </div>
+              <div className="bannerSlide">
+                <img src={logoo} className="bgImg" alt="banner" />
+              </div>
+              <div className="bannerSlide">
+                <img src={bg} className="bgImg" alt="banner" />
+              </div>
             </Carousel>
+
+            {/* Overlay content */}
             <div className="home__content">
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                }}
-              >
-                <h2
-                  style={{
-                    fontFamily: "Segoe Script",
-                    fontSize: "3em",
-                    fontWeight: "500",
-                    color:"blue"
-                  }}
-                >
-                  Amulya
-                </h2>
-                {/* <span
-                  style={{
-                    padding: "10px",
-                    backgroundColor: "#fff",
-                    margin: "0px 10px",
-                    textAlign: "center",
-                    width: "150px",
-                    height: "40px",
-                    color: "#26c",
-                    fontFamily: "Segoe Script",
-                    fontSize: "2.4em",
-                    display: "flex",
-                    justifyContent: "center",
-                    lineHeight: ".7",
-                    alignItems: "center",
-                  }}
-                >
-                  1 Free
-                </span> */}
+              <div className="brandRow">
+                <div className="brandDot"></div>
+                <h2 className="brandTitle">Amulya</h2>
               </div>
-              <div>
-                <h2
-                  style={{
-                    fontSize: "4.5em",
-                    fontFamily: "'Dancing Script', cursive",
-                    color: "#fff",
-                  }}
-                >
-                  Creating Moment
-                </h2>
-              </div>
-              <div>
-                <h2
-                  style={{
-                    fontSize: "4.5em",
-                    fontWeight: "400",
-                    fontFamily: "'Dancing Script', cursive",
-                    color: "#fff",
-                    // lineHeight: ".7",
-                  }}
-                >
-                  Crafting Happiness
-                </h2>
-              </div>
-              <div>
-                <h2
-                  style={{
-                  
-                    fontWeight: "400",
-                    fontFamily: "Poppins,sans-serif",
-                    color: "#fff",
-                    fontSize: "1em",
-                    paddingTop: "10px",
-                  }}
-                >
-                 
-                </h2>
-              </div>
-              <div>
-                <a href="#container">
-                  <button
-                    type="submit"
-                    style={{
-                      width: "120px",
-                      height: "50px",
-                      border: "none",
-                      background: "#3BB77E",
-                      margin: "10px 0",
-                      fontSize: "1.2vmax",
-                      color: "#fff",
-                      cursor: "pointer",
-                    }}
-                  >
-                    SHOP NOW
+
+              <h2 className="heroLineOne">Creating Moments</h2>
+              <h2 className="heroLineTwo">Crafting Happiness</h2>
+
+              <p className="heroSub">
+                Best and Authentic Gift Shop At Kathmandu (Amulya) Creating Moments, Crafting Happiness...
+              </p>
+
+              <div className="heroActions">
+                <a href="#container" className="ctaLink">
+                  <button type="submit" className="ctaBtn">
+                    Shop Now
                   </button>
                 </a>
+
+                <div className="trustRow">
+                  <span className="trustPill">Secure Checkout</span>
+                  <span className="trustPill">Fast Delivery</span>
+                  <span className="trustPill">Premium Leather</span>
+                </div>
               </div>
             </div>
           </div>
 
-          <h2 className="homeHeading">Featured Products</h2>
-          <div className="container" id="container">
-            {products &&
-              products.map((product) => (
-                <ProductCard key={product._id} product={product} />
-              ))}
+          {/* Featured */}
+          <div className="sectionTop">
+            <h2 className="homeHeading">Featured Products</h2>
+            <p className="sectionSub">
+              Best selling pieces curated for gifting, anniversaries, and everyday love.
+            </p>
           </div>
+
+          <div className="container" id="container">
+            {products && products.map((product) => (
+              <ProductCard key={product._id} product={product} />
+            ))}
+          </div>
+
           <ToastContainer
             position="bottom-center"
             autoClose={5000}
@@ -160,6 +99,7 @@ const Home = () => {
             draggable
             pauseOnHover
           />
+
           <Footer />
           <BottomTab />
         </>

@@ -42,12 +42,15 @@ const UpdateProduct = ({ history, match }) => {
   const [imagesPreview, setImagesPreview] = useState([]);
 
   const categories = [
-    "Decorative Plants",
     "Flowers",
-    "Fruit Plants",
-    "Herbs",
+    "Dolpo Shilajit",
+    "Mdf",
+    "Hanging Frames",
+    "Keyrings",
+    "Mini Canvas",
+    "Wooden Keyrings",
     "Indoor Plants",
-    "Outdoor Plants",
+    "combo Packs Gifts",
   ];
 
   const productId = match.params.id;

@@ -4,14 +4,12 @@ import { Link } from "react-router-dom";
 import "./Header.css";
 import logoo from "../../Assets/amulya.png";
 
-
-
 const Header = () => {
-const { cartItems } = useSelector((state) => state.cart);
+  const { cartItems } = useSelector((state) => state.cart);
   const { favouriteItems } = useSelector((state) => state.favourite);
-  
+
   const switcherTab = useRef(null);
-  
+
   window.addEventListener("scroll", () => {
     if (window.pageYOffset > 100) {
       document.querySelector(".navbar").classList.add("active");
@@ -40,8 +38,8 @@ const { cartItems } = useSelector((state) => state.cart);
             />
           </Link>
         </div>
-        {/* Topbar Middle */}
 
+        {/* Topbar Middle */}
         <div
           className="searchBoxHome"
           style={{
@@ -56,14 +54,13 @@ const { cartItems } = useSelector((state) => state.cart);
               alignItems: "center",
               height: "30px",
               width: "100%",
-              background: "#1d6672ff",
+              background: "rgb(37, 125, 10)",
               overflow: "hidden",
             }}
           >
             <span
               style={{
-                color: "#6de80fff",
-                
+                color: "rgb(208, 208, 208)",
               }}
             >
               Welcome to Amulya..(Crafting Movement Creating Happiness)..
@@ -71,6 +68,7 @@ const { cartItems } = useSelector((state) => state.cart);
           </div>
         </div>
 
+        {/* Topbar Right */}
         <div
           className="flex align__items__center"
           style={{
@@ -83,7 +81,7 @@ const { cartItems } = useSelector((state) => state.cart);
               width="25"
               height="25"
               fill="currentColor"
-              class="bi bi-envelope"
+              className="bi bi-envelope"
               viewBox="0 0 16 16"
               style={{
                 color: "#53C08E",
@@ -105,17 +103,17 @@ const { cartItems } = useSelector((state) => state.cart);
             >
               Email:
             </strong>{" "}
-          uttamsapkota.danger@gmail.com
+            uttamsapkota.danger@gmail.com
           </span>
         </div>
       </div>
+
       {/* Header Navbar */}
       <div className="navbar flex pz__10 space__beetween" ref={switcherTab}>
         <div
           className="navigation"
           style={{
             padding: "0px 50px",
-
           }}
         >
           <ul
@@ -138,7 +136,7 @@ const { cartItems } = useSelector((state) => state.cart);
             <Link to="/Products">
               <li>Products</li>
             </Link>
-            
+
             <Link to="/faq">
               <li>Users Rules</li>
             </Link>
@@ -163,6 +161,7 @@ const { cartItems } = useSelector((state) => state.cart);
               </svg>
             </Link>
           </div>
+
           <div className="heart__products flex pointer relative">
             <Link to="/favourites">
               <svg
@@ -176,6 +175,7 @@ const { cartItems } = useSelector((state) => state.cart);
                 <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z" />
               </svg>
             </Link>
+
             <div
               className="heart__numbers"
               style={{
@@ -194,6 +194,7 @@ const { cartItems } = useSelector((state) => state.cart);
               <span>{favouriteItems.length}</span>
             </div>
           </div>
+
           <div className="cart__items flex align__items__center">
             <div className="cart__items flex pointer relative">
               <Link to="/cart">
@@ -208,6 +209,7 @@ const { cartItems } = useSelector((state) => state.cart);
                   <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
                 </svg>
               </Link>
+
               <div
                 className="heart__numbers"
                 style={{
@@ -227,6 +229,7 @@ const { cartItems } = useSelector((state) => state.cart);
               </div>
             </div>
           </div>
+
           <div className="user__account flex pointer">
             <Link to="/login">
               <svg
@@ -248,5 +251,3 @@ const { cartItems } = useSelector((state) => state.cart);
 };
 
 export default Header;
-
-

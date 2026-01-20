@@ -1,16 +1,222 @@
-.inputBox > span{
-    font-family: "Roboto";
-    animation: sliding 14s linear infinite;
-    display: block;
+/* =========================
+   AMULYA HEADER MODERN UI
+   ========================= */
+
+.Header {
+  width: 100%;
+  position: relative;
+  z-index: 99;
+  background: #ffffff;
 }
 
+/* Top bar */
+.Header__topbar {
+  width: 100%;
+  padding: 10px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
+  background: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
 
-@keyframes sliding{
-    0%{
-        transform: translateX(-70%);
-    }
-    100%{
-        transform: translateX(130%);
-    }
+/* Logo image feel premium */
+.logo img,
+img.logo {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.10);
+}
+
+.logo img:hover,
+img.logo:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.14);
+}
+
+/* Welcome scrolling bar */
+.searchBoxHome {
+  display: flex;
+  justify-content: center;
+}
+
+.inputBox {
+  border-radius: 999px;
+  padding: 8px 16px;
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  background: linear-gradient(135deg, rgba(123, 2, 234, 0.12), rgba(59, 183, 126, 0.12));
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.06);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Your text animation stays but looks smoother */
+.inputBox > span {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: rgba(0, 0, 0, 0.78);
+  display: block;
+  white-space: nowrap;
+
+  animation: sliding 14s linear infinite;
+}
+
+@keyframes sliding {
+  0% {
+    transform: translateX(-70%);
+  }
+  100% {
+    transform: translateX(130%);
+  }
+}
+
+/* Email section modern spacing */
+.Header__topbar span {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.Header__topbar svg {
+  filter: drop-shadow(0 10px 14px rgba(0, 0, 0, 0.12));
+}
+
+/* Navbar */
+.navbar {
+  width: 100%;
+  padding: 12px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: #ffffff;
+  transition: background 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Scroll active effect */
+.navbar.active {
+  position: sticky;
+  top: 0;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Navigation links */
+.navigation ul {
+  gap: 24px;
+}
+
+.navigation ul a {
+  text-decoration: none;
+}
+
+.navigation ul li {
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.80);
+  padding: 10px 6px;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+/* underline animation */
+.navigation ul li::after {
+  content: "";
+  position: absolute;
+  left: 10%;
+  bottom: 4px;
+  width: 0%;
+  height: 2px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #7B02EA, #3BB77E);
+  transition: width 0.25s ease;
+}
+
+.navigation ul li:hover {
+  color: #7B02EA;
+  transform: translateY(-1px);
+}
+
+.navigation ul li:hover::after {
+  width: 80%;
+}
+
+/* Right options */
+.rightOption {
+  gap: 8px;
+}
+
+.rightOption svg {
+  transition: transform 0.2s ease, color 0.2s ease, filter 0.2s ease;
+  color: rgba(0, 0, 0, 0.72);
+}
+
+.rightOption svg:hover {
+  transform: translateY(-2px);
+  color: #7B02EA;
+  filter: drop-shadow(0 12px 20px rgba(123, 2, 234, 0.18));
+}
+
+/* Badge count modern style */
+.heart__numbers {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #ffffff;
+
+  background: linear-gradient(135deg, #7B02EA, #3BB77E) !important;
+  box-shadow: 0 14px 24px rgba(0, 0, 0, 0.16);
+  border: 2px solid #ffffff;
+}
+
+/* Make icons clickable area bigger */
+.rightOption a {
+  padding: 10px 8px;
+  border-radius: 12px;
+  transition: background-color 0.2s ease;
+}
+
+.rightOption a:hover {
+  background-color: rgba(123, 2, 234, 0.06);
+}
+
+/* Responsive */
+@media screen and (max-width: 900px) {
+  .searchBoxHome {
+    display: none;
+  }
+
+  .navigation {
+    padding: 0px 10px !important;
+  }
+
+  .navigation ul {
+    gap: 14px;
+  }
+
+  .navigation ul li {
+    font-size: 0.95rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .Header__topbar {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 10px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .navigation ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
 }

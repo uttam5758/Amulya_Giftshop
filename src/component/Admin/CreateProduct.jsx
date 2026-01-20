@@ -39,6 +39,10 @@ const CreateProduct = ({ history }) => {
     "folding Wooden Frame",
     "MDF Logo",
     "Acralic Name Plate",
+    "Flowers",
+    "Indoors Plants",
+    "combo Packs Gifts",
+
     
   ];
 
