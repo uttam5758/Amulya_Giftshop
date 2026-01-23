@@ -592,11 +592,11 @@
   .customization-tabs {
     flex-direction: column;
   }
-
+/* 
   .customization-tabs button {
     width: 100%;
     text-align: left;
-  }
+  } */
 
   .charms-grid {
     grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
