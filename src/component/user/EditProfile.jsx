@@ -18,7 +18,7 @@ const EditProfile = ({ history }) => {
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [avatar, setAvatar] = useState();
+  const [avatar, setAvatar] = useState(null);
   const [avatarPreview, setAvatarPreview] = useState("/profile.png");
 
   const updateProfileSubmit = (e) => {
@@ -28,27 +28,34 @@ const EditProfile = ({ history }) => {
 
     myForm.set("name", name);
     myForm.set("email", email);
-    myForm.set("avatar", avatar);
+    if (avatar) {
+      myForm.set("avatar", avatar);
+    }
     dispatch(updateProfile(myForm));
   };
 
   const updateProfileDataChange = (e) => {
-    const reader = new FileReader();
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
 
-    reader.onload = () => {
-      if (reader.readyState === 2) {
-        setAvatarPreview(reader.result);
-        setAvatar(reader.result);
-      }
-    };
-    reader.readAsDataURL(e.target.files[0]);
+      reader.onload = () => {
+        if (reader.readyState === 2) {
+          setAvatarPreview(reader.result);
+        }
+      };
+      reader.readAsDataURL(file);
+      setAvatar(file);
+    }
   };
 
   useEffect(() => {
     if (user) {
       setName(user.name);
       setEmail(user.email);
-      setAvatarPreview(user.avatar.url);
+      if (user.avatar && user.avatar.url) {
+        setAvatarPreview(user.avatar.url);
+      }
     }
 
     if (error) {

@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import "./Header.css";
@@ -9,14 +9,22 @@ const Header = () => {
   const { favouriteItems } = useSelector((state) => state.favourite);
 
   const switcherTab = useRef(null);
+  const navbarRef = useRef(null);
 
-  window.addEventListener("scroll", () => {
-    if (window.pageYOffset > 100) {
-      document.querySelector(".navbar").classList.add("active");
-    } else {
-      document.querySelector(".navbar").classList.remove("active");
-    }
-  });
+  useEffect(() => {
+    const handleScroll = () => {
+      if (navbarRef.current) {
+        if (window.pageYOffset > 100) {
+          navbarRef.current.classList.add("active");
+        } else {
+          navbarRef.current.classList.remove("active");
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <div className="Header">
@@ -109,7 +117,7 @@ const Header = () => {
       </div>
 
       {/* Header Navbar */}
-      <div className="navbar flex pz__10 space__beetween" ref={switcherTab}>
+      <div className="navbar flex pz__10 space__beetween" ref={navbarRef}>
         <div
           className="navigation"
           style={{

@@ -5,7 +5,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(231, 231, 231);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     position: fixed;
     top: 0%;
     left: 0;
@@ -17,16 +17,34 @@
     height: 70vh;
     box-sizing: border-box;
     overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    animation: slideUp 0.5s ease-out;
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   
   .updateProfileHeading {
     text-align: center;
-    color: rgba(0, 0, 0, 0.664);
-    font: 400 1.3vmax "Roboto";
+    color: #3BB77E;
+    font: 600 1.5vmax "Poppins, sans-serif";
     padding: 1.3vmax;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.205);
-    width: 50%;
+    border-bottom: 2px solid #3BB77E;
+    width: 60%;
     margin: auto;
+    background: linear-gradient(135deg, #3BB77E 0%, #2d8f5f 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
   
   .updateProfileForm {
@@ -51,10 +69,16 @@
     padding-right: 1vmax;
     width: 100%;
     box-sizing: border-box;
-    border: 1px solid rgba(0, 0, 0, 0.267);
-    border-radius: 4px;
-    font: 300 0.9vmax cursive;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font: 400 0.9vmax "Poppins, sans-serif";
     outline: none;
+    transition: all 0.3s ease;
+  }
+
+  .updateProfileForm > div > input:focus {
+    border-color: #3BB77E;
+    box-shadow: 0 0 0 3px rgba(59, 183, 126, 0.1);
   }
   
   .updateProfileForm > div > svg {
@@ -65,9 +89,18 @@
   }
   
   #updateProfileImage > img {
-    width: 3vmax;
-    border-radius: 100%;
+    width: 5vmax;
+    height: 5vmax;
+    border-radius: 50%;
     margin: 1vmax;
+    object-fit: cover;
+    border: 3px solid #3BB77E;
+    box-shadow: 0 4px 10px rgba(59, 183, 126, 0.3);
+    transition: transform 0.3s ease;
+  }
+
+  #updateProfileImage > img:hover {
+    transform: scale(1.1);
   }
   #updateProfileImage > input {
     display: flex;
@@ -240,23 +273,31 @@
   background-color: rgb(235, 235, 235);
 }
 
-.updateProfileBtn {
-  border: none;
-  background-color: #3BB77E;
-  color: white;
-  font: 300 0.9vmax "Roboto";
-  width: 100%;
-  padding: 0.8vmax;
-  cursor: pointer;
-  transition: all 0.5s;
-  border-radius: 4px;
-  outline: none;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.219);
-}
+  .updateProfileBtn {
+    border: none;
+    background: linear-gradient(135deg, #3BB77E 0%, #2d8f5f 100%);
+    color: white;
+    font: 600 1vmax "Poppins, sans-serif";
+    width: 100%;
+    padding: 1vmax;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    outline: none;
+    box-shadow: 0 4px 15px rgba(59, 183, 126, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .updateProfileBtn:hover {
+    background: linear-gradient(135deg, #2d8f5f 0%, #3BB77E 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(59, 183, 126, 0.5);
+  }
 
-.updateProfileBtn:hover {
-  background-color: #3BB77E;
-}
+  .updateProfileBtn:active {
+    transform: translateY(0);
+  }
 
 @media screen and (max-width: 600px) {
   .updateProfileContainer {

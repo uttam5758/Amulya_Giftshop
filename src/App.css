@@ -3,9 +3,27 @@
   margin: 0;
   scroll-behavior: smooth;
   text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
 }
+
 body{
-  font-family: "Poppins,sans-serif";
+  font-family: "Poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Touch-friendly buttons */
+button, a, input, select, textarea {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Minimum touch target size for mobile */
+@media (max-width: 768px) {
+  button, a.button, .nav-btn, .color-card, .size-card, .theme-card {
+    min-height: 44px;
+    min-width: 44px;
+  }
 }
 Chrome, Safari, Edge, Opera
 input::-webkit-outer-spin-button,

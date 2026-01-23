@@ -1,12 +1,26 @@
 .CartItemCard {
     display: flex;
     padding: 1vmax;
-    height: 8vmax;
+    min-height: 8vmax;
     align-items: flex-start;
     box-sizing: border-box;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1vmax;
+    transition: all 0.3s ease;
   }
+
+  .CartItemCard:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+  }
+
   .CartItemCard > img {
     width: 5vmax;
+    height: 5vmax;
+    object-fit: cover;
+    border-radius: 8px;
   }
   
   .CartItemCard > div {
@@ -28,8 +42,63 @@
   
   .CartItemCard > div > p {
     color: #3BB77E;
-    font: 100 0.8vmax "Roboto";
+    font: 600 0.8vmax "Poppins, sans-serif";
     cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 0.5vmax;
+  }
+
+  .CartItemCard > div > p:hover {
+    color: #2d8f5f;
+    text-decoration: underline;
+  }
+
+  .customization-details {
+    margin-top: 0.8vmax;
+    font-size: 0.85vmax;
+    color: #666;
+    padding: 0.8vmax;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border-radius: 6px;
+    border-left: 3px solid #3BB77E;
+  }
+
+  .customization-item {
+    margin-bottom: 0.5vmax;
+    padding: 0.3vmax 0;
+  }
+
+  .customization-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .charms-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3vmax;
+    margin-top: 0.3vmax;
+  }
+
+  .charm-badge {
+    display: inline-block;
+    padding: 0.2vmax 0.6vmax;
+    background: #3BB77E;
+    color: white;
+    border-radius: 12px;
+    font-size: 0.75vmax;
+    font-weight: 500;
+  }
+
+  .gift-item {
+    color: #3BB77E;
+    font-weight: 600;
+  }
+
+  .price-breakdown {
+    margin-top: 0.5vmax;
+    padding-top: 0.5vmax;
+    border-top: 1px dashed #ddd;
+    color: #999;
   }
   
   @media screen and (max-width: 600px) {

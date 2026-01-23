@@ -1,5 +1,5 @@
 /* =========================
-   AMULYA HOME UI (Premium)
+   AMULYA HOME UI (Premium & Attractive)
    ========================= */
 
 .banner {
@@ -8,6 +8,8 @@
   position: relative;
   overflow: hidden;
   background-color: #0b0b10;
+  touch-action: pan-y;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* each slide wrapper */
@@ -81,6 +83,9 @@
   flex-direction: column;
   z-index: 5;
   gap: 14px;
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 /* brand row */
@@ -169,6 +174,8 @@
   background: linear-gradient(135deg, #7B02EA, #3BB77E);
   box-shadow: 0 18px 35px rgba(0, 0, 0, 0.35);
   transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .ctaBtn:hover {
@@ -243,6 +250,8 @@
   max-width: 1200px;
   gap: 18px;
   padding-bottom: 40px;
+  touch-action: pan-y;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Product Card upgrade (same class name used by your ProductCard component) */
@@ -263,6 +272,8 @@
   border: 1px solid rgba(0, 0, 0, 0.08);
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.06);
   overflow: hidden;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .ProductCard:hover {
@@ -316,10 +327,16 @@ h1.discountPrice {
 
 /* Mobile responsiveness */
 @media screen and (max-width: 600px) {
+  .banner {
+    touch-action: pan-y;
+    -webkit-overflow-scrolling: touch;
+  }
+
   .home__content {
     left: 5%;
     width: 90vw;
     align-items: flex-start;
+    touch-action: none;
   }
 
   .heroSub {
@@ -329,14 +346,21 @@ h1.discountPrice {
   .ctaBtn {
     width: 150px;
     height: 50px;
+    touch-action: manipulation;
   }
 
   img.ProductImg {
     height: 200px;
+    touch-action: manipulation;
   }
 
   .ProductCard {
     min-width: 165px;
     max-width: 210px;
+    touch-action: manipulation;
+  }
+
+  .container {
+    touch-action: pan-y;
   }
 }

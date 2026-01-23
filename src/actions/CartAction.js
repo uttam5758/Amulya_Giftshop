@@ -6,18 +6,44 @@ import {
 import axios from "axios";
 
 // Add to Cart ---Product
-export const addItemsToCart = (id, quantity) => async (dispatch, getState) => {
+export const addItemsToCart = (id, quantity, customization = {}) => async (dispatch, getState) => {
   const { data } = await axios.get(`/api/v2/product/${id}`);
+
+  // Calculate price with gift wrapping and charms
+  const basePrice = parseFloat(data.product.price);
+  const giftWrappingPrice = customization.giftWrapping ? 5.00 : 0;
+  const charmsPrice = (customization.charms?.length || 0) * 2.00; // $2 per charm
+  const customImagePrice = customization.imagePreview ? 5.00 : 0; // $5 for custom image
+  const finalPrice = basePrice + giftWrappingPrice + charmsPrice + customImagePrice;
 
   dispatch({
     type: ADD_TO_CART,
     payload: {
       product: data.product._id,
       name: data.product.name,
-      price: data.product.price,
+      price: finalPrice,
+      originalPrice: basePrice,
       image: data.product.images[0].url,
       stock: data.product.stock,
       quantity,
+      customization: {
+        charms: customization.charms || [],
+        color: customization.color || "",
+        size: customization.size || "",
+        customerImage: customization.imagePreview || null,
+        deliveryLocation: customization.deliveryLocation || "",
+        contactNumber: customization.contactNumber || "",
+        recipientName: customization.recipientName || "",
+        customMessage: customization.customMessage || "",
+        giftWrapping: customization.giftWrapping || false,
+        // Price breakdown
+        priceBreakdown: {
+          base: basePrice,
+          giftWrapping: giftWrappingPrice,
+          charms: charmsPrice,
+          customImage: customImagePrice,
+        },
+      },
     },
   });
 

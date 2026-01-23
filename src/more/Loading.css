@@ -9,7 +9,7 @@
     flex-direction: column;
 }
 
-label{
+.loading label{
   position: relative;
   height: 125px;
   width: 125px;
@@ -30,10 +30,10 @@ label{
     transform: rotate(360deg);
   }
 }
-label .check-icon{
+.loading label .check-icon{
   display: none;
 }
-label .check-icon:after{
+.loading label .check-icon:after{
   position: absolute;
   content: "";
   top: 50%;
@@ -68,13 +68,13 @@ label .check-icon:after{
     opacity: 1;
   }
 }
-input#check{
+.loading input#check{
     display: none;
 }
-input:checked ~ label .check-icon{
+.loading input:checked ~ label .check-icon{
   display: block;
 }
-input:checked ~ label{
+.loading input:checked ~ label{
   animation: none;
   border-color: #5cb85c;
   transition: border 0.5s ease-out;

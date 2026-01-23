@@ -22,24 +22,24 @@ const Cart = ({ history }) => {
 
   let totalPrice = Price;
 
-  const increaseQuantity = (id, quantity, stock) => {
-    const newQty = quantity + 1;
-    if (stock <= quantity) {
+  const increaseQuantity = (item) => {
+    const newQty = item.quantity + 1;
+    if (item.stock <= item.quantity) {
       return toast.error("Product Stock Limited");
     }
-    dispatch(addItemsToCart(id, newQty));
+    dispatch(addItemsToCart(item.product, newQty, item.customization || {}));
   };
 
-  const decreaseQuantity = (id, quantity) => {
-    const newQty = quantity - 1;
-    if (1 >= quantity) {
+  const decreaseQuantity = (item) => {
+    const newQty = item.quantity - 1;
+    if (1 >= item.quantity) {
       return;
     }
-    dispatch(addItemsToCart(id, newQty));
+    dispatch(addItemsToCart(item.product, newQty, item.customization || {}));
   };
 
-  const deleteCartItems = (id) => {
-    dispatch(removeItemsFromCart(id));
+  const deleteCartItems = (item) => {
+    dispatch(removeItemsFromCart(item));
   };
 
   const checkoutHandler = () => {
@@ -65,26 +65,18 @@ const Cart = ({ history }) => {
             </div>
 
             {cartItems &&
-              cartItems.map((item) => (
-                <div className="cartContainer" key={item.product}>
+              cartItems.map((item, index) => (
+                <div className="cartContainer" key={`${item.product}-${index}-${JSON.stringify(item.customization || {})}`}>
                   <CartItemCard item={item} deleteCartItems={deleteCartItems} />
                   <div className="cartInput">
                     <button
-                      onClick={() =>
-                        decreaseQuantity(item.product, item.quantity)
-                      }
+                      onClick={() => decreaseQuantity(item)}
                     >
                       -
                     </button>
                     <input type="number" readOnly value={item.quantity} />
                     <button
-                      onClick={() =>
-                        increaseQuantity(
-                          item.product,
-                          item.quantity,
-                          item.stock
-                        )
-                      }
+                      onClick={() => increaseQuantity(item)}
                     >
                       +
                     </button>
