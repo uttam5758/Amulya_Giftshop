@@ -119,7 +119,7 @@ html {
   text-decoration: none;
 }
 
-.navigation ul li {
+/* .navigation ul li {
   position: relative;
   font-family: "Poppins", sans-serif;
   font-size: 1rem;
@@ -127,7 +127,7 @@ html {
   color: rgba(0, 0, 0, 0.80);
   padding: 10px 6px;
   transition: color 0.2s ease, transform 0.2s ease;
-}
+} */
 
 /* underline animation */
 .navigation ul li::after {
