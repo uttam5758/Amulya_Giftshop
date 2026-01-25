@@ -246,7 +246,7 @@
   transition: color 0.25s ease, background-color 0.25s ease, transform 0.25s ease;
 }
 
-.loginForm > a:hover {
+/* .loginForm > a:hover {
   color: black;
 
   /* UI UX enhancement */
@@ -256,7 +256,7 @@
 
 .loginForm > a:active {
   transform: translateY(0px);
-}
+} */
 
 #registerImage > img {
   width: 3vmax;
